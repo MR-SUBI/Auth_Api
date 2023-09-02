@@ -9,6 +9,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController emaiLController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,8 +57,10 @@ class _LoginPageState extends State<LoginPage> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16.0),
                         child: TextField(
+                          controller: emaiLController,
                           decoration: InputDecoration(
                               border: InputBorder.none,
+                              icon:Icon(Icons.email,color: Colors.black,),
                               hintText: "Email",
                               hintStyle:
                                   GoogleFonts.poppins(color: Colors.black)),
@@ -78,8 +82,10 @@ class _LoginPageState extends State<LoginPage> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16.0),
                         child: TextField(
+                          controller: passwordController,
                           obscureText: true,
                           decoration: InputDecoration(
+                              icon:Icon(Icons.lock,color: Colors.black,),
                               border: InputBorder.none,
                               hintText: "Password",
                               hintStyle:
@@ -126,19 +132,23 @@ class _LoginPageState extends State<LoginPage> {
                     child: Column(
                       children: [
                         //hr line
-                        Divider(color: Colors.black),
+                        const Divider(color: Colors.black),
 
-                        //dont have an acc
+                        //dont have an
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal :14.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 14.0),
                           child: Row(
                             children: [
-                              Text('Dont Have an Account?',style: GoogleFonts.poppins(),),
-                              TextButton(onPressed: (){}, child:Text('Register Now'))
+                              Text(
+                                'Dont Have an Account?',
+                                style: GoogleFonts.poppins(),
+                              ),
+                              TextButton(
+                                  onPressed: () {},
+                                  child: const Text('Register Now'))
                             ],
                           ),
                         )
-
                       ],
                     ),
                   ),
