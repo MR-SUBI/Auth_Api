@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:http/http.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -60,7 +61,10 @@ class _LoginPageState extends State<LoginPage> {
                           controller: emaiLController,
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              icon:Icon(Icons.email,color: Colors.black,),
+                              icon: Icon(
+                                Icons.email,
+                                color: Colors.black,
+                              ),
                               hintText: "Email",
                               hintStyle:
                                   GoogleFonts.poppins(color: Colors.black)),
@@ -85,7 +89,10 @@ class _LoginPageState extends State<LoginPage> {
                           controller: passwordController,
                           obscureText: true,
                           decoration: InputDecoration(
-                              icon:Icon(Icons.lock,color: Colors.black,),
+                              icon: Icon(
+                                Icons.lock,
+                                color: Colors.black,
+                              ),
                               border: InputBorder.none,
                               hintText: "Password",
                               hintStyle:
@@ -119,7 +126,10 @@ class _LoginPageState extends State<LoginPage> {
                                     borderRadius: BorderRadius.circular(22),
                                   ), // Background color
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  // login(emaiLController.text.toString(),
+                                  //     passwordController.text.toString( ));
+                                },
                                 child: const Text(
                                   'LogIn',
                                   style: TextStyle(fontSize: 22),
@@ -133,6 +143,24 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         //hr line
                         const Divider(color: Colors.black),
+
+                        //google
+
+                        GestureDetector(
+                          onTap: (){},
+                          child: Container(
+                                height: 40,
+                                width: 40,
+                                decoration: BoxDecoration(
+                                  color: Colors.deepPurple[100],
+                                  borderRadius: BorderRadius.circular(8)
+                                ),
+                               child: Padding(
+                                 padding: const EdgeInsets.all(8.0),
+                                 child: Image.asset('assets/google.png'),
+                               ),
+                              ),
+                        ),
 
                         //dont have an
                         Padding(
@@ -158,4 +186,19 @@ class _LoginPageState extends State<LoginPage> {
           ],
         ));
   }
+
+  // Future<void> login(String email, String password) async {
+  //   try {
+  //     Response response = await post(
+  //         Uri.parse('https://reqres.in/api/register'),
+  //         body: {'email': email, 'password': password});
+  //     if (response.statusCode == 200) {
+  //       print('account created');
+  //     } else {
+  //       print('Failed');
+  //     }
+  //   } catch (e) {
+  //     print(e.toString());
+  //   }
+  // }
 }
