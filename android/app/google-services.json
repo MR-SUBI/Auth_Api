@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "735390320330",
+    "project_id": "authapi-cb669",
+    "storage_bucket": "authapi-cb669.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735390320330:android:7d5de2fecb3ad9bdbd1633",
+        "android_client_info": {
+          "package_name": "com.example.auth_api"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735390320330-9phr2i2a3j02g30vhlr6uo3to3sqrv90.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8y3_dVF-aPwxtr5T1sl_gqxnI0lrOXLE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735390320330-9phr2i2a3j02g30vhlr6uo3to3sqrv90.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

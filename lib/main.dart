@@ -1,7 +1,11 @@
-import 'package:auth_api/loginPage.dart';
+import 'package:auth_api/auth_page.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async{
+WidgetsFlutterBinding.ensureInitialized();
+await Firebase.initializeApp(
+);
   runApp(const Auth());
 }
 class Auth extends StatelessWidget {
@@ -11,7 +15,7 @@ class Auth extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home:AuthPage(),
     );
   }
 }
