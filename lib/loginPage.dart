@@ -1,10 +1,11 @@
+import 'package:auth_api/register/register.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:http/http.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final Function()? onTap;
+ LoginPage({super.key,required this.onTap});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -15,6 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+  
     return Scaffold(
         appBar: AppBar(
           title: const Text(
@@ -171,9 +173,9 @@ class _LoginPageState extends State<LoginPage> {
                               'Dont Have an Account?',
                               style: GoogleFonts.poppins(),
                             ),
-                            TextButton(
-                                onPressed: () {},
-                                child: const Text('Register Now'))
+                            GestureDetector(
+                              onTap: widget.onTap,
+                              child: Text('Register Now')),
                           ],
                         ),
                       )
@@ -194,36 +196,40 @@ class _LoginPageState extends State<LoginPage> {
             child: CircularProgressIndicator(),
           );
         });
-    try{
+    try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emaiLController.text,
-         password: passwordController.text);
-    Navigator.pop(context);
-    }
-    on FirebaseAuthException catch(e){
-    Navigator.pop(context);
+          email: emaiLController.text, password: passwordController.text);
+      Navigator.pop(context);
+    } on FirebaseAuthException catch (e) {
+      Navigator.pop(context);
 
-      if(e.code=='user-not-found'){
-wrongEmail();
-      }
-      else if(e.code == 'wrong-password'){
-wrongPass();
-
-
+      if (e.code == 'user-not-found') {
+        wrongEmail();
+      } else if (e.code == 'wrong-password') {
+        wrongPass();
       }
     }
+  }
 
+  void wrongEmail() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('NO User Found'),
+          );
+        });
   }
-void wrongEmail(){
-  showDialog(context: context, builder:(context){
- return   AlertDialog(title: Text('NO User Found'),);
-  });
-}void wrongPass(){
-  showDialog(context: context, builder:(context){
-   return AlertDialog(title: Text('Incorrect Password'),);
+
+  void wrongPass() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Incorrect Password'),
+          );
+        });
   }
-  );
-}
   // Future<void> login(String email, String password) async {
   //   try {
   //     Response response = await post(
