@@ -160,7 +160,9 @@ class _LoginPageState extends State<LoginPage> {
                             child: Image.asset('assets/google.png'),
                           ),
                         ),
-                      )
+                      ),
+
+               
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 14.0),
                         child: Row(
@@ -226,3 +228,5 @@ class _LoginPageState extends State<LoginPage> {
           );
         });
   }
+  
+}
