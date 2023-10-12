@@ -160,9 +160,7 @@ class _LoginPageState extends State<LoginPage> {
                             child: Image.asset('assets/google.png'),
                           ),
                         ),
-                      ),
-
-                      //dont have an
+                      )
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 14.0),
                         child: Row(
@@ -228,18 +226,3 @@ class _LoginPageState extends State<LoginPage> {
           );
         });
   }
-  // Future<void> login(String email, String password) async {
-  //   try {
-  //     Response response = await post(
-  //         Uri.parse('https://reqres.in/api/register'),
-  //         body: {'email': email, 'password': password});
-  //     if (response.statusCode == 200) {
-  //       print('account created');
-  //     } else {
-  //       print('Failed');
-  //     }
-  //   } catch (e) {
-  //     print(e.toString());
-  //   }
-  // }
-}
