@@ -145,7 +145,7 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       //hr line
                       const Divider(color: Colors.black),
-                      //google
+                    
 
                       GestureDetector(
                         onTap: () {},
@@ -161,7 +161,6 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-
                
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 14.0),
@@ -185,7 +184,6 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ));
   }
-
   void loginMethod() async {
     showDialog(
         context: context,
@@ -208,7 +206,6 @@ class _LoginPageState extends State<LoginPage> {
       }
     }
   }
-
   void wrongEmail() {
     showDialog(
         context: context,
@@ -218,7 +215,6 @@ class _LoginPageState extends State<LoginPage> {
           );
         });
   }
-
   void wrongPass() {
     showDialog(
         context: context,
