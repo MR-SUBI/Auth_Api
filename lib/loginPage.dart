@@ -145,8 +145,6 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       //hr line
                       const Divider(color: Colors.black),
-                    
-
                       GestureDetector(
                         onTap: () {},
                         child: Container(
