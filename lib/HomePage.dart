@@ -13,6 +13,10 @@ class HomePage extends StatelessWidget {
         actions: [IconButton(onPressed:logOut, icon:Icon(Icons.logout))],
       ),
       body: Center(
+
+
+
+
         child: Text('Logged by : '+user.email!),
       ),
     );
